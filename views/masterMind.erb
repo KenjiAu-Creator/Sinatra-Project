@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+  <intro>
+  <p>
+    Welcome to MasterMind!<br>
+    One player is the codemaker, and the other is the codebreaker.
+    The codemaker chooses a pattern of four colored pegs.<br>
+    The codebreaker tries to guess the pattern, in both order and color, within eight turns. 
+    Each guess is made by placing a row of code pegs on the decoding board. Once played
+    the codemaker provides feedback by playing pegs of their own to symbolize if a color has been matched.
+  </p>
+  </intro>
+
+  <form action="/masterMind" method="post">
+    <label for="guess">Peg1</label><br>
+    <input type='text' name='one'><br>
+    <label for="guess">Peg2</label><br>
+    <input type='text' name='two'><br>
+    <label for="guess">Peg3</label><br>
+    <input type='text' name='three'><br>
+    <label for="guess">Peg4</label><br>
+    <input type='text' name='four'><br>
+    <p><input type='submit' value="Submit"></p>
+  </form>
+  
+  <p>
+  Computer Code
+  <%= cookies[:computerCode] %><br>
+  </p>
+
+  <% if @hash %>
+  <div class="guess">
+    Here are your guesses:
+    <% @hash.each do |guessCount, guess| %>
+      <ul><%= guessCount %>:<%= guess %></ul> 
+    <% end %> 
+  </div>
+  <% end %>
+
+  <p>
+  <% if cookies[:hintString] %>
+    <div class="hints">
+      Here are your hints:
+      <% hintArray = cookies[:hintString].split(",") %>
+        <% for i in 1..(hintArray.length/4) do %>
+          <ul><%= i %>:<%= [hintArray[i*4 - 4], hintArray[i * 4 - 3], hintArray[i* 4 -2], hintArray[i*4 - 1]] %></ul>
+        <% end %>
+    </div>
+  <% end %>
+  </p>
+
+  <p>
+  <% if @message %>
+    <%= @message %>
+  <% end %>
+  </p>
+</body>
+</html>

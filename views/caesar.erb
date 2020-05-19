@@ -1,0 +1,28 @@
+<html>
+<head></head>
+  <body>
+    <p>
+    Welcome to my Caesar cipher.
+    </p>
+    <p>
+      <% if message %>
+      Your encrypted message is: <br>
+      <%= message %>
+      <% end %>
+    <p>
+    Please enter a message you wish to encrypt and then the shift number below.
+    </p>
+    <form>
+      <label for='inputMessage'>Message:</label><br>
+      <input type='text' name='encrypt'>
+      </p>
+      <p>
+      <label for='inputShift'>Shift Number:</label><br>
+      <input type='number' name='shift'>
+      </p>
+      <p>
+      <input type='submit' value='Encrypt!'>
+      </p>
+  </body>
+
+</html>
