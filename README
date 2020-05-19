@@ -1,4 +1,6 @@
 This Sinatra project is to have a main page that will direct to subprojects completed before in The Odin Projects Ruby curriculum. 
+The aim of this project is to understand the underlying framework to help solidify the understanding of how different webpages connect to each other.
+
 The projects hosted are: 
 1. Caesar Cipher
 2. MasterMind Game
